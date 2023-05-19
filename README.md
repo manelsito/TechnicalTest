@@ -40,6 +40,6 @@ Once the project is set up, you can run the application by following these steps
 
 4. The application will run on a local server, and you can access it through your browser at [http://localhost:8080](http://localhost:8080) (or the port you configured in `application.properties`).
 
-##Problems
+## Problems
 
 1. I have had several problems with spring security because they have recently updated it and some functionalities have been deprecated, so looking for guides and tutorials has been a bit difficult for me
