@@ -1,4 +1,4 @@
-drop database TODOsDB;
+drop database if exists TODOsDB;
 
 CREATE DATABASE TODOsDB;
 
