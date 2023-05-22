@@ -40,6 +40,10 @@ Once the project is set up, you can run the application by following these steps
 
 4. The application will run on a local server, and you can access it through your browser at [http://localhost:8080](http://localhost:8080) (or the port you configured in `application.properties`).
 
+5. When the application starts, the users and their passwords are displayed on the console so that its functionality can be tested.
+
 ## Problems
 
 1. I have had several problems with spring security because they have recently updated it and some functionalities have been deprecated, so looking for guides and tutorials has been a bit difficult for me
+
+2. In the bonus of the unit tests, I had problems installing the "mockito" dependency to do it, the project would not go away if I put that dependency so in the end I had to remove it
