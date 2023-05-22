@@ -1,18 +1,18 @@
 package com.app.web.service;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.app.web.entity.User;
 import com.app.web.entity.Todo;
-import com.app.web.service.repository.TodoRepository;
+import com.app.web.entity.User;
+import com.app.web.repository.TodoRepository;
 
 @Service
 public class TodoServiceImplements implements TodoService{
-	
+
 	@Autowired
 	private TodoRepository todoRepository;
 
@@ -20,7 +20,7 @@ public class TodoServiceImplements implements TodoService{
 	public List<Todo> listAllTodos() {
 		return todoRepository.findAll();
 	}
-
+	
 	@Override
 	public List<Todo> listTodosByTitleAndUsername(String todoTitle, String todoUsername) {
 		List<Object[]> results = new ArrayList<>();
@@ -34,7 +34,7 @@ public class TodoServiceImplements implements TodoService{
 		else if (todoTitle.equals("") && !todoUsername.equals("")) {
 			 results = todoRepository.getTodosByUsername(todoUsername);
 		}
-		
+
 		for (Object[] result : results) {
 			Long id = (Long) result[0];
 		    String title = (String) result[1];
@@ -42,7 +42,7 @@ public class TodoServiceImplements implements TodoService{
 		    User user = new User((Long) result[3], (String) result[4], (String) result[5]);
 		    todos.add(new Todo(id, title, completed, user));
 		}
-		
+
 		return todos;
 	}
 
@@ -60,7 +60,7 @@ public class TodoServiceImplements implements TodoService{
 	public void deleteTodo(Long todoId) {
 		Todo todo = getTodoById(todoId);
 		todoRepository.delete(todo);
-		
+
 	}
 
 }

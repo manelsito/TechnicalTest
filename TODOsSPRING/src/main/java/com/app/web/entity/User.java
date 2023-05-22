@@ -43,15 +43,12 @@ public class User {
 	@Column(name = "Country", nullable = false, length = 255)
 	private String country;
 
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "userId", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "roleId", referencedColumnName = "id"))
-	private List<Role> roles;
-
 	public User() {
 
 	}
-	
-	
+
+
+	//---CONSTRUCTORS---
 
 	public User(Long id, String username, String country) {
 		this.id = id;
@@ -84,44 +81,12 @@ public class User {
 		this.country = country;
 	}
 
-	public User(String username, String password, List<Role> roles) {
+	public User(String username, String password) {
 		this.username = username;
 		this.password = password;
-		this.roles = roles;
 	}
-
-	public User(Long id, String name, String username, String password, String street, String city, String zipcode,
-			String country, List<Role> roles) {
-		this.id = id;
-		this.name = name;
-		this.username = username;
-		this.password = password;
-		this.street = street;
-		this.city = city;
-		this.zipcode = zipcode;
-		this.country = country;
-		this.roles = roles;
-	}
-
-	public User(String name, String username, String password, String street, String city, String zipcode,
-			String country, List<Role> roles) {
-		this.name = name;
-		this.username = username;
-		this.password = password;
-		this.street = street;
-		this.city = city;
-		this.zipcode = zipcode;
-		this.country = country;
-		this.roles = roles;
-	}
-
-	public List<Role> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(List<Role> role) {
-		this.roles = role;
-	}
+	
+	//---GETTERS & SETTERS---
 
 	public Long getId() {
 		return id;

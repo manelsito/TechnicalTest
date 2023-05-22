@@ -4,8 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.app.web.entity.User;
-import com.app.web.service.repository.UserRepository;
+import com.app.web.repository.UserRepository;
 
 @Service
 public class UserServiceImplement implements UserService {
@@ -18,6 +19,6 @@ public class UserServiceImplement implements UserService {
 		return userRepository.findAll();
 	}
 
-	
+
 
 }
