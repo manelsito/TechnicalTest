@@ -24,11 +24,12 @@ CREATE TABLE Todo (
 );
 
 INSERT INTO User (Name, Username, Password, Street, City, Zipcode, Country) VALUES 
-('Manel Agudo', 'Manelsito', '1234', 'Terra Baixa', 'Hospitalet de Llobregat', '08901', 'Spain'),
-('Alberto Santos', 'Alberto', '1234', 'Torres i Amat', 'Barcelona', '08001', 'Spain'),
-('María López', 'MariaL', 'password123', 'Calle Principal', 'Madrid', '28001', 'Spain'),
-('John Smith', 'johnsmith', 'pass456', '123 Oak Street', 'New York', '10001', 'United States'),
-('Laura García', 'laurag', 'abc123', 'Avenida del Sol', 'Sevilla', '41001', 'Spain');
+('Manel Agudo', 'Manel', '$2a$10$Jezyu76toVlzQgl9GMn./.WaNbxDX9EX7w.aIN.91G417YXmdmjdK', 'Terra Baixa', 'Hospitalet de Llobregat', '08901', 'Spain'),
+('Alberto Santos', 'Alberto', '$2a$10$DEEKfUP5.PPx1AXqJtwbl.yu0SYl0X/aIOTIsMN6ir9tHLuPD2iu6', 'Torres i Amat', 'Barcelona', '08001', 'Spain'),
+('María López', 'MariaL', '$2a$10$ZThsT02hmRKFllyWXbOdP.uXPdAcrd.BMheX5RnjscC9CUIcBQVTO', 'Calle Principal', 'Madrid', '28001', 'Spain'),
+('John Smith', 'johnsmith', '$2a$10$U2djFqUUDMGlrccNo9jpMedDcC70Y7bomveVp1b6JnjWiq0JFpVXK', '123 Oak Street', 'New York', '10001', 'United States'),
+('Laura García', 'laurag', '$2a$10$0vBnjyD1WO3fzRbhOl.8ieWs0oQgRqogtja.DVmEsJFp0yAMeqc4e', 'Avenida del Sol', 'Sevilla', '41001', 'Spain');
+
 
 INSERT INTO Todo (Title, Completed, user_id) VALUES 
 ('Tarea 1 de Usuario 1', true, 1), 
@@ -47,10 +48,3 @@ INSERT INTO Todo (Title, Completed, user_id) VALUES
 ('Tarea 2 de Usuario 5', true, 5),
 ('Tarea 3 de Usuario 5', false, 5),
 ('Tarea 4 de Usuario 5', true, 5);
-
-
-select * from user;
-
-select * from todo;
-
-SELECT t.title, u.username, u.country, t.completed FROM Todo t JOIN user u WHERE t.title = "Tarea 1 de Usuario 1" AND u.username = "Manelsito";
