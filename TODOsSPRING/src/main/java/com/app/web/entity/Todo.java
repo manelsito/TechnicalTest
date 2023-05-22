@@ -21,19 +21,21 @@ public class Todo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column(name = "Title", nullable=false, length=255)
 	private String title;
-	
+
 	@Column(name = "Completed")
 	private boolean completed;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "user_id", nullable=false)
 	private User user;
 	
+	//---COSTRUCTORS---
+
 	public Todo() {
-		
+
 	}
 
 	public Todo(Long id, String title, boolean completed, User user) {
@@ -48,6 +50,8 @@ public class Todo {
 		this.completed = completed;
 		this.user = user;
 	}
+	
+	//---GETTERS & SETTERS---
 
 	public Long getId() {
 		return id;
@@ -80,7 +84,7 @@ public class Todo {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
-	
-	
+
+
+
 }

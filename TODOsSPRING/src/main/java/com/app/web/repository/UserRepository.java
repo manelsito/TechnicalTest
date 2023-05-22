@@ -1,6 +1,5 @@
-package com.app.web.service.repository;
+package com.app.web.repository;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,6 +9,12 @@ import com.app.web.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
-	Optional<User> findByUsername(String username);
 	
+	/**
+	 * Function to find a user by the username
+	 * @param username, the username to do the search
+	 * @return the user find
+	 */
+	Optional<User> findByUsername(String username);
+
 }
